@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <style>
+    
+    
+    @import url('https://fonts.googleapis.com/css?family=Gugi');
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe');
+body{
+background-image: url('https://indainam.com/wp-content/uploads/2017/10/mau-background-don-gian-01-1024x640.jpg');
+
+
+}
+.wrap{
+    width:100%;
+    height:2000px;
+}
+.section1{
+background-color: white;
+margin: 10% 15%;
+padding: 20px;
+}
+.shopping-cart{
+    border-bottom: rgb(134, 124, 124) solid 1px;
+}
+.titre1{
+    font-family:'ZCOOL+KuaiLe', Arial, Helvetica, sans-serif; 
+}
+.image{
+    width: 200px;
+    height: 400px;
+    object-fit: cover;
+}
+.Car{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+border-bottom: grey solid 2px;
+padding-top: 20px
+}
+.fas{
+    padding: 20px;
+    font-size: 50px
+}
+.Nomcar{
+    font-family: Gugi;
+    color: white;
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(233, 168, 168), rgb(247, 136, 136));
+    background-repeat: no-repeat;
+    background-size: 100%;
+   
+   
+  }
+  
+  /* @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+
+} */
+
+.btn{
+    padding: 0 20px;
+    cursor: pointer;
+}
+.compteur{
+    font-family: Gugi, Arial, Helvetica, sans-serif 
+}
+.call-back{
+    width: 70px;height: 50px;
+    top:70px;left: 0px;position:absolute;
+    z-index:20;cursor: pointer;
+}
+.call-back i{
+    font-size: 38px;color:#ec1c1c;position: relative;
+}
+.call-back i:hover{
+    color:#BADA55;
+}
+.call-back .text{
+    width:70px;height: 50px;position: absolute;top:90px;display: none;border-radius: 5px;
+
+}
+.call-back .text p{
+   color:black;font-size: 20px;position: relative;top:-20px;left:10px;
+}
+.call-back:hover .text{
+    display: block;background:#f1f1f1 ;
+} 
+@media only screen and(max-width: 600px){
+    .wrap{
+        width:100%;
+        height:4000px;
+        display: flex;flex-direction: column;
+    }
+  
+    .wrap .call-back{
+        top:0px;left:0px;
+    }
+}
+@media only screen and(min-width: 1200px){
+
+}
+  </style>
+</head>
+<body>
+    <div class="wrap">
+ <section class="section1">
+  <div class="shopping-cart">
+   <h1 class="titre1">Shopping girls Total:<span id="somme" class="score">0</span> <span>$</span></h1>
+  </div>
+   <div class="Car" id="Audi">
+       <div class="div1-audi">
+        <i class="fas fa-times" onclick="remove1()"></i>
+        <i  id="coeur" class="fas fa-heart"  onclick="heart1()"></i>
+       </div>
+       <img src="https://miro.medium.com/max/1462/0*MjRg7sEqVr8uBPz0.jpg" alt="logo" class="image">
+       <span class="Nomcar"> Hot girl 111D</span>
+       <div class="boutoncommande">
+           <button class="btn" onclick="incre()">+</button>
+           <span class="btn" id="produit1">0</span>
+           <button class="btn" onclick="decr()">-</button>
+       </div>
+       <p class="compteur"> <span id="prix1">0</span> <span>$</span> </p>
+   </div>
+
+   <div class="Car" id="BMW">
+    <div class="div1-Bmw">
+     <i class="fas fa-times" onclick="remove2()"></i>
+     <i  id="coeur1"  class="fas fa-heart" onclick="heart2()"></i>
+    </div>
+    <img src="https://congngheads.com/media/images/anh-dep/hinh-nen-dep-cho-desktop-win-10-1559377452/bo-anh-gai-xinh-chao-ngay-moi-cua-nu-hotgirl-xinh-dep-lam-hinh-nen-dien-thoai-2.jpg" alt="logo" class="image">
+    <span class="Nomcar"> hot girl 112D</span>
+    <div class="boutoncommande">
+        <button class="btn" onclick="incre2()">+</button>
+        <span class="btn" id="produit2">0</span>
+        <button class="btn" onclick="decr2()">-</button>
+    </div>
+    <p class="compteur"> <span id="prix2">0</span> <span>$</span> </p>
+</div>
+<div class="Car" id="Porche">
+    <div class="div1-porche">
+     <i class="fas fa-times" onclick="remove3()"></i>
+     <i class="fas fa-heart" id="coeur3" onclick="heart3()" ></i>
+    </div>
+    <img src="https://4.bp.blogspot.com/-qNzhEXcSAjY/XJSH4PZZBuI/AAAAAAAArGA/eSeTQ6ieqp0rFJV0vFkMSJzzbwmvlkUHwCLcBGAs/s1600/53666494_2352017985084086_3639378295323099136_o.jpg" alt="logo" class="image">
+    <span class="Nomcar"> Hot girl 911</span>
+    <div class="boutoncommande">
+        <button class="btn" onclick="incre3()">+</button>
+        <span class="btn" id="produit3">0</span>
+        <button class="btn" onclick="decr3()">-</button>
+    </div>
+    <p class="compteur"> <span id="prix3">0</span> <span>$</span> </p>
+</div>
+<div class="Car" id="girl4">
+  <div class="div1-porche">
+   <i class="fas fa-times" onclick="remove4()"></i>
+   <i class="fas fa-heart" id="coeur4" onclick="heart4()" ></i>
+  </div>
+  <img src="https://phepthuat.com/wp-content/uploads/2017/12/phepthuat.com_girlxinh-73.jpg" alt="logo" class="image">
+  <span class="Nomcar"> Hot girl 317</span>
+  <div class="boutoncommande">
+      <button class="btn" onclick="incre4()">+</button>
+      <span class="btn" id="produit4">0</span>
+      <button class="btn" onclick="decr4()">-</button>
+  </div>
+  <p class="compteur"> <span id="prix4">0</span> <span>$</span> </p>
+</div>
+<div class="call-back">
+    <div id="back" onclick="comeback()"><i class="fas fa-home"></i></div>
+    <div class="text"><p>Trở về nè!</p></div>
+</div>
+ </section> 
+ </div>
+ <script >
+  let a=document.getElementById('somme')
+let b=document.getElementById('Audi')
+let c=document.getElementById('coeur')
+let d=document.getElementById('produit1')
+let e=document.getElementById('prix1')
+let f=document.getElementById('produit2')
+let g=document.getElementById('prix2')
+let h=document.getElementById('BMW')
+let i=document.getElementById('coeur1')
+let j=document.getElementById('coeur3')
+let k=document.getElementById('produit3')
+let l=document.getElementById('prix3')
+let m=document.getElementById('Porche')
+let n=document.getElementById('girl4')
+let o=document.getElementById('produit4')
+let p=document.getElementById('prix4')
+let q=document.getElementById('coeur4')
+function heart1(){
+    if(c.style.color=='red'){
+        c.style.color='black'
+    }
+    else{
+        c.style.color='red'
+    }
+}
+function  incre(){
+d.innerHTML=+d.innerHTML+1;
+e.innerHTML=+e.innerHTML+10000;
+a.innerHTML=+a.innerHTML+10000;
+}
+function decr(){
+    if(d.innerHTML==0){
+d.innerHTML=+d.innerHTML;
+e.innerHTML=+e.innerHTML;
+a.innerHTML=+a.innerHTML;
+    }else{
+        d.innerHTML=+d.innerHTML-1;
+        e.innerHTML=+e.innerHTML-10000;
+        a.innerHTML=+a.innerHTML-10000;
+    }
+}
+function remove1(){
+    b.style.display='none';
+    a.innerHTML=+a.innerHTML-e.innerHTML;
+}
+function heart2(){
+    if(i.style.color=='red'){
+        i.style.color='black'
+    }else{
+        i.style.color='red'
+    }
+}
+function incre2(){
+    f.innerHTML=+f.innerHTML+1;
+    g.innerHTML=+g.innerHTML+20000;
+    a.innerHTML=+a.innerHTML+20000;
+}
+function decr2(){
+    if(f.innerHTML==0){
+        f.innerHTML=+f.innerHTML;
+        g.innerHTML=+g.innerHTML;
+        a.innerHTML=+a.innerHTML;
+    }else{
+        f.innerHTML=+f.innerHTML-1;
+    g.innerHTML=+g.innerHTML-20000;
+    a.innerHTML=+a.innerHTML-20000;
+    }
+}
+function remove2(){
+h.style.display='none';
+a.innerHTML=+a.innerHTML-g.innerHTML;
+}
+function heart3(){
+    if(j.style.color=='red'){
+        j.style.color='black'
+    }else{
+        j.style.color='red'
+    }
+}
+function incre3(){
+    k.innerHTML=+k.innerHTML+1;
+    l.innerHTML=+l.innerHTML+30000;
+    a.innerHTML=+a.innerHTML+30000;
+}
+function decr3(){
+    if(l.innerHTML==0){
+        k.innerHTML=+k.innerHTML;
+    l.innerHTML=+l.innerHTML;
+    a.innerHTML=+a.innerHTML;
+    }else{
+        k.innerHTML=+k.innerHTML-1;
+        l.innerHTML=+l.innerHTML-30000;
+        a.innerHTML=+a.innerHTML-30000; 
+    }
+}
+function remove3(){
+m.style.display='none';
+a.innerHTML=+a.innerHTML-l.innerHTML;
+}
+function heart4(){
+    if(q.style.color=='red'){
+        q.style.color='black'
+    }else{
+        q.style.color='red'
+    }
+}
+function incre4(){
+    o.innerHTML=+o.innerHTML+1;
+    p.innerHTML=+p.innerHTML+30000;
+    a.innerHTML=+a.innerHTML+30000;
+}
+function decr4(){
+    if(o.innerHTML==0){
+        p.innerHTML=+p.innerHTML;
+    o.innerHTML=+o.innerHTML;
+    a.innerHTML=+a.innerHTML;
+    }else{
+        p.innerHTML=+p.innerHTML-1;
+        o.innerHTML=+o.innerHTML-30000;
+        a.innerHTML=+a.innerHTML-30000; 
+    }
+}
+function remove4(){
+n.style.display='none';
+a.innerHTML=+a.innerHTML-p.innerHTML;
+}
+
+
+function comeback(){
+    window.location.href ="./lazyload.html"
+   }
+  </script>  
+</body>
+</html>

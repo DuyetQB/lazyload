@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+    <style>
+      
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.html , .body{
+    height: 100%;
+   
+}
+body{
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    background: url("https://namratapdrjs.netlify.app/scrolling-animations/assets/bg2.jpg"); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+   text-align: center;
+       justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    min-height: 100vh;
+}
+.container h1{
+    position: relative;
+    bottom: 2rem;
+}
+.call-back{
+    width: 70px;height: 40px;
+    top:100px;left: 100px;position: relative;background: #000;
+}
+.call-back i{
+    font-size: 38px;color:#f1f1f1;
+}
+.call-back i:hover{
+    color:#BADA55;
+}
+.call-back .text{
+    width:50px;height: 50px;position: absolute;top:40px;display: none;border-radius: 5px;
+
+}
+.call-back .text p{
+   color:black;font-size: 20px;position: relative;top:-20px;
+}
+.call-back:hover .text{
+    display: block;background:#f1f1f1 ;
+}
+#arrow{
+    position: relative;
+    left: 45px;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
+    transform: rotate(-45deg);
+    animation: move .7s linear infinite;
+}
+@keyframes move {
+    0% {
+        transform:rotate(-45deg) translateY(-10px);
+    }
+    100% {
+        transform: rotate(-45deg) translateY(0);
+    }
+}
+.scroll{
+    font-size: 2rem;
+    text-align: center;
+     min-height: 100vh;
+}
+.genre{
+    text-align: left;
+    position: relative;
+    margin-left: 1.5rem;
+}
+.scroll-right-left , .zoom ,.flip{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+    min-height: 100vh;
+    width: 95%;
+    margin: 0 1.5rem;
+    margin-bottom: 1rem;
+}
+.image-container {
+   position: absolute;
+    width: clamp(450px , 50% , 600px);
+    height: 350px;
+    top:1rem;
+}
+.left{
+    left:0;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    object-fit: cover;
+}
+.right{
+
+    position: absolute;
+    top: 380px;
+    right: 0;
+    border-radius: 5%;
+}
+@media (max-width: 760px){
+    .image-container {
+    position: relative;
+    width: 90vw;
+    height: 90%;
+    top:1rem;
+}
+.scroll-right-left , .zoom , .flip{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+    min-height: 100%;
+    width: 95%;
+    padding: 1rem;
+}
+  footer{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 3rem;
+    height: 100px;
+}
+}
+footer{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 8rem;
+    height: 100px;
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+      
+.custom-cursor {
+   width: 3rem;
+   height: 3rem;
+   border: 1px solid hsla(0, 0%, 100%, .7);
+   border-radius: 100%;
+ 
+   background: hsla(0, 0%, 80%, .2);
+   position: absolute;
+   z-index: 5;
+   transform: translate(-50%, -50%);
+ 
+   pointer-events: none;
+ }  
+      
+    </style>
+  </head>
+    <body>
+<section>
+        <div class="container">
+            <div class="swipe">
+                <p>Swipe  </p>
+                <h1>Down</h1>
+                <div id="arrow">
+                
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section class="scroll">
+        <div id="shows"><h1>Shows</h1></div>
+        <div class="genre"><h3>Sci-Fi/Fantasy</h3></div>
+        <div  class="scroll-right-left " >
+            <div class="image-container left" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1500" data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/dark.png" alt="dark">
+            </div>
+            <div class="image-container right " data-aos="fade-right" data-aos-delay="100" data-aos-duration="1500" data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/umbrella.jpg" alt="umbrella">
+            </div>
+        </div>
+    
+    </section>
+    <section class="scroll">
+        <div class="genre">
+            <h3>Thriller/Crime</h3>
+        </div>
+        <div class="zoom ">
+            <div class="image-container left" data-aos="zoom-in-left" data-aos-delay="50" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/bb.jpg" alt="breaking bad">
+            </div>
+            <div class="image-container right " data-aos="zoom-in-right" data-aos-delay="100" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/mh.jpg" alt="Mind Hunter">
+            </div>
+        </div>
+    
+    </section>
+    <section class="scroll">
+        <div class="genre">
+            <h3>Drama/Comedy</h3>
+        </div>
+        <div class="flip ">
+            <div class="image-container left" data-aos="flip-left" data-aos-delay="50" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/b99.jpg" alt="brooklyn nine nine">
+            </div>
+           
+            <div class="image-container right " data-aos="flip-right" data-aos-delay="100" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/one-day-at-a-time.jpg" alt="one-day-at-a-time">
+            </div>
+        </div>
+    
+    </section>
+    <section class="scroll">
+        <div class="genre">
+            <h3>Drama/Thriller</h3>
+        </div>
+        <div class="scroll-right-left ">
+            <div class="image-container left" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/Killing-Eve.jpg" alt="Killing eve">
+            </div>
+    
+            <div class="image-container right " data-aos="fade-right" data-aos-delay="100" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/elite.jpg" alt="Elite">
+            </div>
+        </div>
+    
+    </section>
+    <section class="scroll">
+        <div class="genre">
+            <h3>Anime</h3>
+        </div>
+        <div class="zoom ">
+            <div class="image-container left" data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/fma.jpg" alt="fma">
+            </div>
+            <div class="image-container right " data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="1500"
+                data-aos-easing="ease-in">
+                <img src="https://namratapdrjs.netlify.app/scrolling-animations/assets/ds.png" alt="demon slayer">
+            </div>
+            <div class="call-back">
+                <div id="back" onclick="comeback()"><i class="fas fa-arrow-alt-circle-left"></i></div>
+                <div class="text"><p>Trở về nè!</p></div>
+            </div>
+           
+        </div>
+        <div class="custom-cursor"></div>
+    </section>
+    <footer>
+        <p>Recommended by <a href="https://github.com/DuyetQB" target="_blank" rel="noopener noreferrer">Dinh Si Duyet </a>. <br>(All pictures were taken from google and I dont own any of them.)</p>
+   
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+      <script>
+        
+        AOS.init();
+        
+        
+      </script>
+      <script>
+        // responsiveVoice.speak("xin chào các bạn mình là Duyệt .Hiện tại mình 19 tuổi.Sở thích của mình là học tiếng Anh và lập trình ,mình rất vui khi được làm quen ạ ", "Vietnamese Female");
+      
+        const $ = e => document.querySelector(e);
+const $$ = e => document.querySelectorAll(e);
+const cursor = $(".custom-cursor");
+// Cursor Event
+/* ========== */
+window.addEventListener("mousemove", ({pageY: Y, pageX: X}) => {
+  cursor.style.top = `${Y}px`;
+  cursor.style.left = `${X}px`;
+})
+    
+   function comeback(){
+    window.location.href ="./lazyload.html"
+   }
+    </script>
+</body>
+    </html>
